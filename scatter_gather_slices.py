@@ -24,3 +24,8 @@ else:
 data = comm.scatter(data, root=0)
 
 print('Process {} has data:'.format(rank), data)
+
+gathered_data = comm.gather(data, root=0)
+
+if rank == 0:
+    print("Gathered data: ", gathered_data)
