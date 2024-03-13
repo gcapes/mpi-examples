@@ -5,10 +5,8 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 nprocs = comm.Get_size()
 
-print(rank, nprocs)
-
 def process_data(data):
-    print('Process {} has data:'.format(rank), data)
+    print(f'Process {rank} has data: {data}')
     data = data + rank
     return data
 
